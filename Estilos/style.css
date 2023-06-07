@@ -39,12 +39,17 @@ body {
    grid-template-rows: 1fr 1fr 3fr;
 }
 
+header, main, aside {
+   margin: 50px;
+}
+
 header {
    grid-column: 1/3;
    grid-row: 1/2;
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
+   margin-bottom: 0 !important;
 }
 
 #iday, #imonth, #iyear {
@@ -54,14 +59,34 @@ header {
 .divDay, .divMonth, .divYear {
    display: flex;
    flex-wrap: wrap;
-   width: 100%;
+   width: 20%;
    height: 80px;
    align-content: center;
+   margin-right: 30px;
+}
+
+.divDay label, .divMonth label, .divYear label {
+   width: 100%;
 }
 
 .divDay input, .divMonth input, .divYear input {
-   width: 90%;
-   height: 80%;
+   width: 100%;
+   height: 70%;
+   border-radius: 7px;
+   font-size: 26px;
+   padding: 20px;
+   outline: none;
+   border: 1px solid var(--color-neutral3);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+input[type=number] {
+   -moz-appearance: textfield;
 }
 
 main {
@@ -70,6 +95,22 @@ main {
    display: flex;
    justify-content: center;
    align-items: center;
+   margin-top: 0 !important;
+   margin-bottom: 0 !important;
+   width: 80%;
+   height: 100%;
+}
+
+main .content {
+   width: 90%;
+}
+
+.arrow img {
+   background: var(--color-primario1);
+   border-radius: 80px;
+   padding: 20px;
+   width: 80px;
+   height: 80px;
 }
 
 aside {
