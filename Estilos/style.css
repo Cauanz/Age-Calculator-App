@@ -31,9 +31,9 @@ body {
 
 .container {
    width: 45%;
-   height: 70%;
+   height: 80%;
    background: var(--color-neutral);
-   border-radius: 20px 20px 200px 20px ;
+   border-radius: 20px 20px 170px 20px ;
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-template-rows: 1fr 1fr 3fr;
@@ -59,7 +59,7 @@ header {
 .divDay, .divMonth, .divYear {
    display: flex;
    flex-wrap: wrap;
-   width: 20%;
+   width: 21%;
    height: 80px;
    align-content: center;
    margin-right: 30px;
@@ -67,6 +67,10 @@ header {
 
 .divDay label, .divMonth label, .divYear label {
    width: 100%;
+   font-size: 13px;
+   color: var(--color-neutral4);
+   margin-bottom: 5px;
+   letter-spacing: 3px;
 }
 
 .divDay input, .divMonth input, .divYear input {
@@ -74,21 +78,27 @@ header {
    height: 70%;
    border-radius: 7px;
    font-size: 26px;
-   padding: 20px;
+   padding-left: 16px;
    outline: none;
    border: 1px solid var(--color-neutral3);
 }
 
+/* REMOVE ARROWS FROM INPUT NUMBER */
+/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
    -webkit-appearance: none;
    margin: 0;
 }
-
+/* Firefox */
 input[type=number] {
    -moz-appearance: textfield;
+   appearance: textfield;
 }
 
+/* REMOVE ARROWS FROM INPUT NUMBER */
+
+/* MAIN */
 main {
    grid-column: 1/3;
    grid-row: 2/3;
@@ -97,12 +107,22 @@ main {
    align-items: center;
    margin-top: 0 !important;
    margin-bottom: 0 !important;
-   width: 80%;
+/*    width: 80%; */
    height: 100%;
 }
 
 main .content {
    width: 90%;
+   height: 100%;
+   display: flex;
+   align-content: center;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+main hr {
+   border: 1px solid var(--color-neutral3);
+   width: 100%;
 }
 
 .arrow img {
@@ -118,6 +138,21 @@ aside {
    grid-row: 3/4;
    display: flex;
    justify-content: center;
-   align-items: center;
-   border-radius: 0 0 20px 20px;
+   margin-top: 0 !important;
+   margin-bottom: 0 !important;
+   flex-wrap: wrap;
+   align-content: flex-start;
+}
+
+.Years, .Months, .Days {
+   width: 100%;
+   font-weight: 800;
+   font-style: italic;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+}
+
+.trace, .text {
+   font-size: 70px
 }
