@@ -28,23 +28,40 @@ function calcAge() {
    let month = birthMonth - currentMonth;
    let day = birthDay - currentDay;
 
+   if (age < 0) {
+      age = age * -1;
+      if(month < 0) {
+         month = month * -1;
+         if(day < 0) {
+            day = day * -1;
+         } else {
+            day = day;
+         }
+      }
+   } else {
+      age = age;
+      if(month < 0) {
+         month = month * -1;
+         if(day < 0) {
+            day = day * -1;
+         } else {
+            day = day;
+         }
+      }
+   }
+
+   Math.abs(age);
+   Math.abs(month);
+   Math.abs(day);
+
    console.log(age);
    console.log(month);
    console.log(day);
 
-   if(birthDay > currentDay || birthMonth > currentMonth || birthYear > currentYear) {
-      Empty();
-   } else {
-      if(age < 0 || month < 0 || day < 0) {
-         age = age * -1;
-         month = month * -1;
-         day = day * -1;
-      }
 
       YearText.innerHTML = age;
       MonthText.innerHTML = month;
       DayText.innerHTML = day;
-   }
 }
 
 function Empty() {
